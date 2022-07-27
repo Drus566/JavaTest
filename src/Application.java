@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import java.awt.event.*;
 import java.security.DigestException;
 
 public class Application extends JFrame {
@@ -194,10 +193,63 @@ public class Application extends JFrame {
         optButtonPanelScroll.setWheelScrollingEnabled(true);
         optButtonPanelScroll.setVerticalScrollBar(scrollBar);
         optButtonPanelScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+        optButtonPanelScroll.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                System.out.println("SIZE " + optButtonPanelScroll.getSize());
+                System.out.println("EXTENT SIZE " + optButtonPanelScroll.getViewport().getExtentSize());
+                System.out.println("VIEW SIZE " + optButtonPanelScroll.getViewport().getViewSize());
+
+                Dimension viewSize = optButtonPanelScroll.getViewport().getViewSize();
+                Dimension extentSize = optButtonPanelScroll.getViewport().getExtentSize();
+
+                if (extentSize.height < viewSize.height) {
+                    if (!topScrollButton.isVisible()) {
+                        topScrollButton.setVisible(true);
+                    }
+                    if (!bottomScrollButton.isVisible()) {
+                        bottomScrollButton.setVisible(true);
+                    }
+                } else {
+                    if (topScrollButton.isVisible()) {
+                        topScrollButton.setVisible(false);
+                    }
+                    if (bottomScrollButton.isVisible()) {
+                        bottomScrollButton.setVisible(false);
+                    }
+                }
+            }
+        });
 
         //optButtonPanelScroll.getViewport().
 
         //optButtonPanelScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        bottomScrollButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Point viewOrigin = optButtonPanelScroll.getViewport().getViewPosition();
+
+                //if (viewOrigin.y < 7000) {
+                    viewOrigin.y = viewOrigin.y + 96;
+                //}
+
+                optButtonPanelScroll.getViewport().setViewPosition(viewOrigin);
+            }
+        });
+
+        topScrollButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Point viewOrigin = optButtonPanelScroll.getViewport().getViewPosition();
+
+                if (viewOrigin.y > 0) {
+                    viewOrigin.y = viewOrigin.y - 96;
+                }
+
+                optButtonPanelScroll.getViewport().setViewPosition(viewOrigin);
+            }
+        });
 
         cardButtons.add(mainButton);
         cardButtons.add(topScrollButton);
