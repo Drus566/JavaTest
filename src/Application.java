@@ -95,7 +95,8 @@ public class Application extends JFrame {
         JPanel borderLayout = new JPanel(new BorderLayout());
 
         // Card Layout
-        JPanel cardLayout = new JPanel(new CardLayout());
+        CardLayout cardLayout = new CardLayout();
+        JPanel cardPanel = new JPanel(cardLayout);
 
         JPanel firstLayout = new JPanel();
         firstLayout.add(new TextField("TThis is first layout"));
@@ -177,9 +178,9 @@ public class Application extends JFrame {
         optButtonsPanel.add(secondButton);
         optButtonsPanel.add(thirdButton);
         optButtonsPanel.add(fourthButton);
-        //optButtonsPanel.add(fifthButton);
-        //optButtonsPanel.add(sixButton);
-        //optButtonsPanel.add(seventhButton);
+//        optButtonsPanel.add(fifthButton);
+//        optButtonsPanel.add(sixButton);
+//        optButtonsPanel.add(seventhButton);
 
         // ScrollBar
         JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL) {
@@ -264,14 +265,35 @@ public class Application extends JFrame {
         //cardButtons.setPreferredSize(new Dimension(300, 300));
         cardButtons.setBackground(Color.RED);
 
-        cardLayout.add(firstLayout,firstButton.toString());
-        cardLayout.add(secondLayout,secondButton.toString());
-        cardLayout.add(thirdLayout,thirdButton.toString());
-        cardLayout.add(settingsLayout,settingsButton.toString());
+
+        cardPanel.add(firstLayout,"first");
+        cardPanel.add(secondLayout,"second");
+        cardPanel.add(thirdLayout,"third");
+        cardPanel.add(settingsLayout,"settings");
+        firstButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "first");
+            }
+        });
+        secondButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "second");
+            }
+        });
+        thirdButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "third");
+            }
+        });
+
+        System.out.println(thirdButton.toString());
 
         // Кладем кнопочки в бордер лайаут
         borderLayout.add(cardButtons, BorderLayout.WEST);
-        borderLayout.add(cardLayout, BorderLayout.CENTER);
+        borderLayout.add(cardPanel, BorderLayout.CENTER);
 
         frame.setContentPane(borderLayout);
 
