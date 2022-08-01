@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.*;
@@ -407,6 +408,7 @@ public class Application extends JFrame {
         table6.setCellSelectionEnabled(false);
         table6.setFocusable(false);
         table6.setDefaultEditor(Object.class, null);
+        table6.getTableHeader().setResizingAllowed(false);
 
         table6.setShowGrid(false);
         table6.getTableHeader().setReorderingAllowed(false);
@@ -447,6 +449,8 @@ public class Application extends JFrame {
         c.gridx = 1;
         c.gridy = 2;
         c.gridwidth = GridBagConstraints.REMAINDER;
+        c.gridheight = 2;
+
         c.fill = GridBagConstraints.BOTH;
         c.insets = new Insets(0, 0, 0, 200);
 
@@ -486,7 +490,7 @@ public class Application extends JFrame {
 
     private String[][] getData() {
         String[][] data = {
-                {"Kundar Kumar Jha" ,"4031", "CSE" },
+                {"<html>EMS<br>Priority<br>Document" ,"4031", "CSE" },
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
@@ -572,7 +576,6 @@ public class Application extends JFrame {
             System.err.println( "Failed to initialize LaF" );
         }
     }
-
 }
 
 class TextParser {
