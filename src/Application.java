@@ -1,13 +1,16 @@
 import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.TableColumnModelEvent;
+import javax.swing.event.TableColumnModelListener;
+import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.security.DigestException;
+import java.util.*;
 
 public class Application extends JFrame {
     Application () {
@@ -203,9 +206,9 @@ public class Application extends JFrame {
         optButtonPanelScroll.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-                System.out.println("SIZE " + optButtonPanelScroll.getSize());
-                System.out.println("EXTENT SIZE " + optButtonPanelScroll.getViewport().getExtentSize());
-                System.out.println("VIEW SIZE " + optButtonPanelScroll.getViewport().getViewSize());
+//                System.out.println("SIZE " + optButtonPanelScroll.getSize());
+//                System.out.println("EXTENT SIZE " + optButtonPanelScroll.getViewport().getExtentSize());
+//                System.out.println("VIEW SIZE " + optButtonPanelScroll.getViewport().getViewSize());
 
                 Dimension viewSize = optButtonPanelScroll.getViewport().getViewSize();
                 Dimension extentSize = optButtonPanelScroll.getViewport().getExtentSize();
@@ -271,7 +274,6 @@ public class Application extends JFrame {
         //cardButtons.setPreferredSize(new Dimension(300, 300));
         cardButtons.setBackground(Color.RED);
 
-
         cardPanel.add(firstLayout,"first");
         cardPanel.add(secondLayout,"second");
         cardPanel.add(thirdLayout,"third");
@@ -336,7 +338,7 @@ public class Application extends JFrame {
         JScrollPane sp = new JScrollPane(table);
         //sp.setMinimumSize(new Dimension(100,100));
 
-        panel.add(sp, c);
+        //panel.add(sp, c);
 
         JTable table1;
         table1 = new JTable(data,columnNames);
@@ -348,8 +350,7 @@ public class Application extends JFrame {
         c.gridy = 0;
         c.gridwidth = GridBagConstraints.RELATIVE;
 
-
-        panel.add(sp1, c);
+        //panel.add(sp1, c);
 
         JTable table2;
         table2 = new JTable(data,columnNames);
@@ -363,7 +364,7 @@ public class Application extends JFrame {
         c.ipady = 10;
         c.ipadx = 20;
 
-        panel.add(sp2, c);
+        //panel.add(sp2, c);
 
         JTable table3;
         table3 = new JTable(data,columnNames);
@@ -374,7 +375,7 @@ public class Application extends JFrame {
         c.gridx = 0;
         c.gridy = 1;
 
-        panel.add(sp3, c);
+        // panel.add(sp3, c);
 
         JTable table4;
         table4 = new JTable(data,columnNames);
@@ -385,7 +386,7 @@ public class Application extends JFrame {
         c.gridx = 1;
         c.gridy = 1;
 
-        panel.add(sp4, c);
+        // panel.add(sp4, c);
 
         JTable table5;
         table5 = new JTable(data,columnNames);
@@ -398,10 +399,12 @@ public class Application extends JFrame {
         c.gridy = 1;
         c.gridwidth = GridBagConstraints.REMAINDER;
 
-        panel.add(sp5, c);
+        // panel.add(sp5, c);
 
         JTable table6;
         table6 = new JTable(data,columnNames);
+        setTextArea(table6);
+
         JScrollPane sp6 = new JScrollPane(table6);
         table6.setBackground(Color.YELLOW);
         table6.setRowSelectionAllowed(false);
@@ -439,6 +442,7 @@ public class Application extends JFrame {
         table6.setFont(loadFont());
         table6.setRowHeight(30);
         table6.getTableHeader().setFont(loadFont());
+        table6.getTableHeader().setPreferredSize(new Dimension(table6.getColumnModel().getTotalColumnWidth(), 100));
 
 
         UIManager.getDefaults().put("TableHeader.cellBorder" , BorderFactory.createEmptyBorder(0,0,0,0));
@@ -446,13 +450,13 @@ public class Application extends JFrame {
 
         c.weightx = 1;
         c.weighty = 1;
-        c.gridx = 1;
-        c.gridy = 2;
-        c.gridwidth = GridBagConstraints.REMAINDER;
-        c.gridheight = 2;
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridwidth = 1;
+        //c.gridheight = 2;
 
         c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(0, 0, 0, 200);
+        //c.insets = new Insets(0, 0, 0, 200);
 
 
 
@@ -477,27 +481,28 @@ public class Application extends JFrame {
         tableWithTitle.add(title, BorderLayout.NORTH);
         tableWithTitle.add(sp7, BorderLayout.CENTER);
 
-        c.insets = new Insets(10, 10, 10, 10);
+
+        //c.insets = new Insets(10, 10, 10, 10);
 
         c.weightx = 1;
         c.weighty = 1;
-        c.gridx = 0;
-        c.gridy = 3;
+        c.gridx = 1;
+        c.gridy = 0;
         c.gridwidth = 1;
-        panel.add(tableWithTitle, c);
+        //panel.add(tableWithTitle, c);
 
     }
 
     private String[][] getData() {
         String[][] data = {
                 {"<html>EMS<br>Priority<br>Document" ,"4031", "CSE" },
+                {"Anand Jhaasdddddddddddasddddddddddddddddd", "6014", "IT"},
+                {"Anand Jha", "6014", "IasddddddddddddddT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
+                {"Anand Jha", "6014", "IsaddddddddddddT"},
+                {"Anand Jha", "6asddddddddddd014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
@@ -561,7 +566,7 @@ public class Application extends JFrame {
     private Font loadFont() {
         Font f = null;
         try {
-            f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/onest.ttf"))).deriveFont(Font.PLAIN, 24);
+            f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/onest.ttf"))).deriveFont(Font.PLAIN, 12);
             //f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/FontinSans_Cyrillic_46b/FontinSans_Cyrillic_B_46b.otf"))).deriveFont(Font.PLAIN, 24);
         } catch (Exception e) {
             e.printStackTrace();
@@ -574,6 +579,168 @@ public class Application extends JFrame {
             //UIManager.setLookAndFeel( new FlatLightLaf() );
         } catch( Exception ex ) {
             System.err.println( "Failed to initialize LaF" );
+        }
+    }
+
+    private void setTextArea(JTable table) {
+
+        TableColumnModel columnModel = table.getColumnModel();
+        Dimension tableHeaderSize = table.getTableHeader().getPreferredSize();
+
+        int countColumns = columnModel.getColumnCount();
+        int countRows = table.getRowCount();
+
+        ArrayList<String> tableColumnNames = new ArrayList<>(0);
+        ArrayList<ArrayList<String>> tableRowNames = new ArrayList<>(0);
+
+        for (int e = 0; e < countRows; e++) {
+            ArrayList<String> arrNames = new ArrayList<>(0);
+            for (int k = 0; k < countColumns; k++) {
+                arrNames.add(table.getValueAt(e, k).toString());
+            }
+            tableRowNames.add(arrNames);
+        }
+
+        for (int i = 0; i < countColumns; i++) {
+            tableColumnNames.add(table.getColumnName(i));
+        }
+
+        //table.getColumnModel().getColumn(2).setCellRenderer(new TextAreaRenderer());
+        for (int i = 0; i < countColumns; i++) {
+            table.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(new MultiLineTableHeaderRenderer());
+            table.getColumnModel().getColumn(i).setCellRenderer(new MultiLineTableHeaderRenderer());
+        }
+//        table
+
+
+
+        BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        FontMetrics fm = img.getGraphics().getFontMetrics(loadFont());
+
+        ArrayList<Integer> widthColumns = new ArrayList<Integer>(0);
+        for (String title : tableColumnNames) {
+            widthColumns.add(fm.stringWidth(title) + 5);
+        }
+
+        HashMap<Integer, ArrayList<Integer>> rowNameWidthMap = new HashMap<Integer, ArrayList<Integer>>(0);
+
+        int rowCounter = 0;
+        for (ArrayList<String> arList : tableRowNames) {
+            ArrayList<Integer> tempMap = new ArrayList<Integer>(0);
+            int max = 0;
+            int index = 0;
+            int i = 0;
+            for (String name : arList) {
+                int width = fm.stringWidth(name) + 5;
+                if (max < width) {
+                    max = width;
+                    index = i;
+                }
+                i++;
+            }
+            tempMap.add(index);
+            tempMap.add(max);
+
+            rowNameWidthMap.put(rowCounter, tempMap);
+            rowCounter++;
+        }
+
+        int prefferedSizesRows[] = new int[countRows];
+        for (int i = 0 ; i < countRows; i++) {
+            prefferedSizesRows[i] = table.getRowHeight(i);
+        }
+
+
+        columnModel.addColumnModelListener(new TableColumnModelListener()
+        {
+            @Override
+            public void columnAdded(TableColumnModelEvent arg0) {
+//                System.out.println ("TableColumnModelListener.columnAdded()");
+            }
+            @Override
+            public void columnMarginChanged(ChangeEvent arg0) {
+//                System.out.println ("TableColumnModelListener.columnMarginChanged()");
+//                System.out.println(columnModel.getColumn(0).getWidth());
+//                System.out.println((x * (fontSize - 6)) - fontSize * 0.1));
+//                double k = fontSize * 0.535;
+//                double i = fontSize / 3;
+//                long width = Math.round(x * k + i);
+//                System.out.println(width);
+//                table1.getTableHeader().getColumnModel().getColumn(0).getHeaderValue();
+
+                for (int i = 0; i < countColumns; i++) {
+                    if (columnModel.getColumn(i).getWidth() < widthColumns.get(i)) {
+                        table.getTableHeader().setPreferredSize(new Dimension(tableHeaderSize.width, tableHeaderSize.height * 2));
+                    } else {
+                        table.getTableHeader().setPreferredSize(tableHeaderSize);
+                    }
+                  //  System.out.println(width);
+                }
+
+
+                ArrayList<Integer> arr1 = rowNameWidthMap.get(0);
+                System.out.println(columnModel.getColumn(arr1.get(0)).getWidth());
+                System.out.println(arr1.get(1));
+
+
+                for (int j = 0; j < countRows; j++) {
+                    ArrayList<Integer> arr = rowNameWidthMap.get(j);
+
+
+                    if (columnModel.getColumn(arr.get(0)).getWidth() < arr.get(1)) {
+                        //rowNames.getKey()
+                        table.setRowHeight(prefferedSizesRows[j] * 2);
+                    } else {
+                        table.setRowHeight(prefferedSizesRows[j]);
+                    }
+                }
+            }
+            @Override
+            public void columnMoved(TableColumnModelEvent arg0) {
+//                System.out.println ("TableColumnModelListener.columnMoved()");
+            }
+            @Override
+            public void columnRemoved(TableColumnModelEvent arg0) {}
+            @Override
+            public void columnSelectionChanged(ListSelectionEvent arg0) {
+//                System.out.println ("TableColumnModelListener.columnSelectionChanged()");
+            }
+        });
+    }
+
+    class TextAreaRenderer extends JTextArea
+            implements TableCellRenderer {
+
+        public TextAreaRenderer() {
+            setLineWrap(true);
+            setWrapStyleWord(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable jTable,
+                                                       Object obj, boolean isSelected, boolean hasFocus, int row,
+                                                       int column) {
+            setText((String)obj);
+            return this;
+        }
+    }
+
+    class MultiLineTableHeaderRenderer extends JTextArea implements TableCellRenderer
+    {
+        public MultiLineTableHeaderRenderer() {
+            setEditable(false);
+            setLineWrap(true);
+            setOpaque(false);
+            setFocusable(false);
+            setWrapStyleWord(true);
+            //LookAndFeel.installBorder(this, "TableHeader.cellBorder");
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            int width = table.getColumnModel().getColumn(column).getWidth();
+            setText((String)value);
+            setSize(width, getPreferredSize().height);
+            return this;
         }
     }
 }
