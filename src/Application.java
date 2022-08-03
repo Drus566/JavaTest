@@ -406,7 +406,7 @@ public class Application extends JFrame {
         setTextArea(table6);
 
         JScrollPane sp6 = new JScrollPane(table6);
-        table6.setBackground(Color.YELLOW);
+        //table6.setBackground(Color.YELLOW);
         table6.setRowSelectionAllowed(false);
         table6.setCellSelectionEnabled(false);
         table6.setFocusable(false);
@@ -418,26 +418,26 @@ public class Application extends JFrame {
         TableColumn column1 = table6.getColumnModel().getColumn(0);
         column1.setPreferredWidth(600);
 //        column.setMinWidth(500);
-        column1.setMaxWidth(Short.MAX_VALUE);
-        DefaultTableCellRenderer render1 = new DefaultTableCellRenderer();
-        render1.setHorizontalAlignment(JLabel.LEFT);
-        column1.setCellRenderer(render1);
+//        column1.setMaxWidth(Short.MAX_VALUE);
+//        DefaultTableCellRenderer render1 = new DefaultTableCellRenderer();
+//        render1.setHorizontalAlignment(JLabel.LEFT);
+//        column1.setCellRenderer(render1);
 
         TableColumn column2 = table6.getColumnModel().getColumn(1);
         column2.setPreferredWidth(300);
 //        column.setMinWidth(500);
-        column2.setMaxWidth(Short.MAX_VALUE);
-        DefaultTableCellRenderer render2 = new DefaultTableCellRenderer();
-        render2.setHorizontalAlignment(JLabel.CENTER);
-        column2.setCellRenderer(render2);
+//        column2.setMaxWidth(Short.MAX_VALUE);
+//        DefaultTableCellRenderer render2 = new DefaultTableCellRenderer();
+//        render2.setHorizontalAlignment(JLabel.CENTER);
+//        column2.setCellRenderer(render2);
 
         TableColumn column3 = table6.getColumnModel().getColumn(2);
         column3.setPreferredWidth(300);
 //        column.setMinWidth(500);
-        column3.setMaxWidth(Short.MAX_VALUE);
-        DefaultTableCellRenderer render3 = new DefaultTableCellRenderer();
-        render3.setHorizontalAlignment(JLabel.CENTER);
-        column3.setCellRenderer(render3);
+//        column3.setMaxWidth(Short.MAX_VALUE);
+//        DefaultTableCellRenderer render3 = new DefaultTableCellRenderer();
+//        render3.setHorizontalAlignment(JLabel.CENTER);
+//        column3.setCellRenderer(render3);
 
         table6.setFont(loadFont());
         table6.setRowHeight(30);
@@ -496,7 +496,7 @@ public class Application extends JFrame {
     private String[][] getData() {
         String[][] data = {
                 {"<html>EMS<br>Priority<br>Document" ,"4031", "CSE" },
-                {"Anand Jhaasdddddddddddasddddddddddddddddd", "6014", "IT"},
+                {"Anand Jhaas dddddddd dddasdddddddd ddddddddd", "6014", "IT"},
                 {"Anand Jha", "6014", "IasddddddddddddddT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
@@ -509,50 +509,28 @@ public class Application extends JFrame {
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
+                {"<html>EMS<br>Priority<br>Document" ,"4031", "CSE" },
+                {"Anand Jhaas dddddddd dddasdddddddd ddddddddd", "6014", "IT"},
+                {"Anand Jha", "6014", "IasddddddddddddddT"},
+                {"Anand Jha", "6014", "IT"},
+                {"Anand Jha", "6014", "IT"},
+                {"Anand Jha", "6014", "IT"},
+                {"Anand Jha", "6014", "IsaddddddddddddT"},
+                {"Anand Jha", "6asddddddddddd014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
+                {"<html>EMS<br>Priority<br>Document" ,"4031", "CSE" },
+                {"Anand Jhaas dddddddd dddasdddddddd ddddddddd", "6014", "IT"},
+                {"Anand Jha", "6014", "IasddddddddddddddT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
-                {"Anand Jha", "6014", "IT"},
+                {"Anand Jha", "6014", "IsaddddddddddddT"},
+                {"Anand Jha", "6asddddddddddd014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
                 {"Anand Jha", "6014", "IT"},
@@ -566,7 +544,7 @@ public class Application extends JFrame {
     private Font loadFont() {
         Font f = null;
         try {
-            f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/onest.ttf"))).deriveFont(Font.PLAIN, 12);
+            f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/onest.ttf"))).deriveFont(Font.PLAIN, 16);
             //f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./resources/FontinSans_Cyrillic_46b/FontinSans_Cyrillic_B_46b.otf"))).deriveFont(Font.PLAIN, 24);
         } catch (Exception e) {
             e.printStackTrace();
@@ -590,148 +568,132 @@ public class Application extends JFrame {
         int countColumns = columnModel.getColumnCount();
         int countRows = table.getRowCount();
 
-        ArrayList<String> tableColumnNames = new ArrayList<>(0);
-        ArrayList<ArrayList<String>> tableRowNames = new ArrayList<>(0);
-
-        for (int e = 0; e < countRows; e++) {
-            ArrayList<String> arrNames = new ArrayList<>(0);
-            for (int k = 0; k < countColumns; k++) {
-                arrNames.add(table.getValueAt(e, k).toString());
-            }
-            tableRowNames.add(arrNames);
-        }
-
-        for (int i = 0; i < countColumns; i++) {
-            tableColumnNames.add(table.getColumnName(i));
-        }
-
-        //table.getColumnModel().getColumn(2).setCellRenderer(new TextAreaRenderer());
+//        ArrayList<String> tableColumnNames = new ArrayList<>(0);
+//        ArrayList<ArrayList<String>> tableRowNames = new ArrayList<>(0);
+//
+//        for (int e = 0; e < countRows; e++) {
+//            ArrayList<String> arrNames = new ArrayList<>(0);
+//            for (int k = 0; k < countColumns; k++) {
+//                arrNames.add(table.getValueAt(e, k).toString());
+//            }
+//            tableRowNames.add(arrNames);
+//        }
+//
+//        for (int i = 0; i < countColumns; i++) {
+//            tableColumnNames.add(table.getColumnName(i));
+//        }
+//
+//        //table.getColumnModel().getColumn(2).setCellRenderer(new TextAreaRenderer());
         for (int i = 0; i < countColumns; i++) {
             table.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(new MultiLineTableHeaderRenderer());
-            table.getColumnModel().getColumn(i).setCellRenderer(new MultiLineTableHeaderRenderer());
+            table.getColumnModel().getColumn(i).setCellRenderer(new TextAreaRenderer(table));
         }
-//        table
-
-
-
-        BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
-        FontMetrics fm = img.getGraphics().getFontMetrics(loadFont());
-
-        ArrayList<Integer> widthColumns = new ArrayList<Integer>(0);
-        for (String title : tableColumnNames) {
-            widthColumns.add(fm.stringWidth(title) + 5);
-        }
-
-        HashMap<Integer, ArrayList<Integer>> rowNameWidthMap = new HashMap<Integer, ArrayList<Integer>>(0);
-
-        int rowCounter = 0;
-        for (ArrayList<String> arList : tableRowNames) {
-            ArrayList<Integer> tempMap = new ArrayList<Integer>(0);
-            int max = 0;
-            int index = 0;
-            int i = 0;
-            for (String name : arList) {
-                int width = fm.stringWidth(name) + 5;
-                if (max < width) {
-                    max = width;
-                    index = i;
-                }
-                i++;
-            }
-            tempMap.add(index);
-            tempMap.add(max);
-
-            rowNameWidthMap.put(rowCounter, tempMap);
-            rowCounter++;
-        }
-
-        int prefferedSizesRows[] = new int[countRows];
-        for (int i = 0 ; i < countRows; i++) {
-            prefferedSizesRows[i] = table.getRowHeight(i);
-        }
-
-
-        columnModel.addColumnModelListener(new TableColumnModelListener()
-        {
-            @Override
-            public void columnAdded(TableColumnModelEvent arg0) {
-//                System.out.println ("TableColumnModelListener.columnAdded()");
-            }
-            @Override
-            public void columnMarginChanged(ChangeEvent arg0) {
-//                System.out.println ("TableColumnModelListener.columnMarginChanged()");
-//                System.out.println(columnModel.getColumn(0).getWidth());
-//                System.out.println((x * (fontSize - 6)) - fontSize * 0.1));
-//                double k = fontSize * 0.535;
-//                double i = fontSize / 3;
-//                long width = Math.round(x * k + i);
-//                System.out.println(width);
-//                table1.getTableHeader().getColumnModel().getColumn(0).getHeaderValue();
-
-                for (int i = 0; i < countColumns; i++) {
-                    if (columnModel.getColumn(i).getWidth() < widthColumns.get(i)) {
-                        table.getTableHeader().setPreferredSize(new Dimension(tableHeaderSize.width, tableHeaderSize.height * 2));
-                    } else {
-                        table.getTableHeader().setPreferredSize(tableHeaderSize);
-                    }
-                  //  System.out.println(width);
-                }
-
-
-                ArrayList<Integer> arr1 = rowNameWidthMap.get(0);
-                System.out.println(columnModel.getColumn(arr1.get(0)).getWidth());
-                System.out.println(arr1.get(1));
-
-
-                for (int j = 0; j < countRows; j++) {
-                    ArrayList<Integer> arr = rowNameWidthMap.get(j);
-
-
-                    if (columnModel.getColumn(arr.get(0)).getWidth() < arr.get(1)) {
-                        //rowNames.getKey()
-                        table.setRowHeight(prefferedSizesRows[j] * 2);
-                    } else {
-                        table.setRowHeight(prefferedSizesRows[j]);
-                    }
-                }
-            }
-            @Override
-            public void columnMoved(TableColumnModelEvent arg0) {
-//                System.out.println ("TableColumnModelListener.columnMoved()");
-            }
-            @Override
-            public void columnRemoved(TableColumnModelEvent arg0) {}
-            @Override
-            public void columnSelectionChanged(ListSelectionEvent arg0) {
-//                System.out.println ("TableColumnModelListener.columnSelectionChanged()");
-            }
-        });
     }
 
-    class TextAreaRenderer extends JTextArea
-            implements TableCellRenderer {
 
-        public TextAreaRenderer() {
+    class TextAreaRenderer extends JTextArea implements TableCellRenderer {
+        Font font;
+        ArrayList<Integer> prefferedSizesRows;
+        HashMap<Integer, ArrayList<Integer>> rowNameWidthMap;
+
+        int COLUMN = 0;
+        int VALUE = 1;
+
+        public TextAreaRenderer(JTable customTable) {
             setLineWrap(true);
             setWrapStyleWord(true);
+
+            // не работает с этим шрифтом перенос по словам
+            font = loadFont();
+//            font = new Font("Serif", Font.ITALIC, 16);
+
+            rowNameWidthMap = new HashMap<Integer, ArrayList<Integer>>(0);
+            prefferedSizesRows = new ArrayList<>(0);
+
+
+            int countColumns = customTable.getColumnCount();
+            int countRows = customTable.getRowCount();
+
+            ArrayList<ArrayList<String>> tableRowNames = new ArrayList<>(0);
+
+            for (int e = 0; e < countRows; e++) {
+                ArrayList<String> arrNames = new ArrayList<>(0);
+                for (int k = 0; k < countColumns; k++) {
+                    arrNames.add(customTable.getValueAt(e, k).toString());
+                }
+                tableRowNames.add(arrNames);
+            }
+
+            //table.getColumnModel().getColumn(2).setCellRenderer(new TextAreaRenderer());
+
+//            customTable.setFont(loadFont());
+//        table
+
+            BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+            FontMetrics fm = img.getGraphics().getFontMetrics(font);
+
+            int rowCounter = 0;
+            for (ArrayList<String> arList : tableRowNames) {
+                ArrayList<Integer> tempMap = new ArrayList<Integer>(0);
+                int max = 0;
+                int index = 0;
+                int i = 0;
+                for (String name : arList) {
+                    int width = fm.stringWidth(name);
+                    if (max < width) {
+                        max = width;
+                        index = i;
+                    }
+                    i++;
+                }
+                tempMap.add(index);
+                tempMap.add(max);
+
+                rowNameWidthMap.put(rowCounter, tempMap);
+                rowCounter++;
+            }
+
+            for (int i = 0 ; i < countRows; i++) {
+                prefferedSizesRows.add(customTable.getRowHeight(i));
+            }
         }
 
-        public Component getTableCellRendererComponent(JTable jTable,
-                                                       Object obj, boolean isSelected, boolean hasFocus, int row,
-                                                       int column) {
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object obj, boolean isSelected, boolean hasFocus, int row, int column) {
             setText((String)obj);
+            setFont(font);
+
+            if (row < 0) {
+                return null;
+            }
+
+            ArrayList<Integer> rowData = rowNameWidthMap.get(row);
+            int col = rowData.get(COLUMN);
+
+            if (col == column) {
+                int val = rowData.get(VALUE);
+                if (table.getColumnModel().getColumn(column).getWidth() < val) {
+                    //rowNames.getKey()
+                    table.setRowHeight(row , prefferedSizesRows.get(row) * 3);
+                } else {
+                    table.setRowHeight(row , prefferedSizesRows.get(row) );
+                }
+            }
+
             return this;
         }
     }
 
     class MultiLineTableHeaderRenderer extends JTextArea implements TableCellRenderer
     {
+
         public MultiLineTableHeaderRenderer() {
             setEditable(false);
             setLineWrap(true);
             setOpaque(false);
             setFocusable(false);
             setWrapStyleWord(true);
+
             //LookAndFeel.installBorder(this, "TableHeader.cellBorder");
         }
 
@@ -740,6 +702,44 @@ public class Application extends JFrame {
             int width = table.getColumnModel().getColumn(column).getWidth();
             setText((String)value);
             setSize(width, getPreferredSize().height);
+            super.setFont(loadFont());
+
+
+//            ArrayList<Integer> arr = rowNameWidthMap.get(row);
+//
+            if (row >= 0) {
+                if (table.getColumnModel().getColumn(column).getWidth() < 200) {
+                    //rowNames.getKey()
+                    table.setRowHeight(row , table.getRowHeight(row) * 3);
+                } else {
+                    table.setRowHeight(row , 20);
+                }
+
+            }
+
+
+
+            return this;
+        }
+    }
+
+    class MultiLineTableRenderer extends JLabel implements TableCellRenderer
+    {
+        public MultiLineTableRenderer() {
+            setOpaque(false);
+            setFocusable(false);
+            //LookAndFeel.installBorder(this, "TableHeader.cellBorder");
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            int width = table.getColumnModel().getColumn(column).getWidth();
+            setText(String.format("<html><body style=\"text-align: justify; word-wrap: break-word; word-break: break-all; line-height: 0.2; text-justify: inter-character;\">%s</body></html>", value));
+            setSize(width, getPreferredSize().height);
+            super.setFont(loadFont());
+
+
+
             return this;
         }
     }
