@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 
 public class ResizableBorder implements Border {
 
-    private int dist = 8;
+    private int dist = 20;
 
     int[] locations = {
             SwingConstants.NORTH, SwingConstants.SOUTH, SwingConstants.WEST,
@@ -55,7 +55,6 @@ public class ResizableBorder implements Border {
                 var rect = getRectangle(x, y, w, h, location);
 
                 if (rect != null) {
-
                     g.setColor(Color.WHITE);
                     g.fillRect(rect.x, rect.y, rect.width - 1, rect.height - 1);
                     g.setColor(Color.BLACK);

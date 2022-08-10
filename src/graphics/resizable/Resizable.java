@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 public class Resizable extends JComponent {
 
     public Resizable(Component comp) {
-        this(comp, new ResizableBorder(8));
+        this(comp, new ResizableBorder(22));
     }
 
     public Resizable(Component comp, ResizableBorder border) {
@@ -35,9 +35,7 @@ public class Resizable extends JComponent {
 
         @Override
         public void mouseMoved(MouseEvent me) {
-
             if (hasFocus()) {
-
                 var resizableBorder = (ResizableBorder) getBorder();
                 setCursor(Cursor.getPredefinedCursor(resizableBorder.getCursor(me)));
             }
