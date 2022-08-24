@@ -1,8 +1,6 @@
 package src.com.mytext;
 
 import org.w3c.dom.Text;
-import src.com.test.PanelTest;
-import src.com.text.TextFormat;
 
 import javax.swing.*;
 import java.awt.*;

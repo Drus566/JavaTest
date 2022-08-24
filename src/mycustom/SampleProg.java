@@ -1,6 +1,7 @@
 package mycustom;
 
 
+import java.awt.*;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,6 +16,13 @@ public class SampleProg {
 
     public static void main(String ...args) {
         SampleProg prog = new SampleProg();
+    }
+
+    public void getAllSystemFonts() {
+        for (int i = 0; i < GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames().length; i++) {
+            String name = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames()[i];
+            System.out.println(name);
+        }
     }
 }
 
