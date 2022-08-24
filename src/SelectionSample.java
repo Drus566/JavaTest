@@ -95,6 +95,9 @@ public class SelectionSample extends JPanel {
     // drag.
     private int activeEnd;
 
+    private int posistionChar;
+    private boolean highlight = false;
+
     public SelectionSample() {
 
         AttributedString attributedMixed = new AttributedString(mixed, map);
@@ -141,7 +144,11 @@ public class SelectionSample extends JPanel {
     private Point2D computeLayoutOrigin() {
         Dimension size = getSize();
         Point2D.Float origin = new Point2D.Float();
+        // Размер от правого края окна до правого края текста
+        System.out.println("GetAdvance: " + textLayout.getAdvance());
+        System.out.println("SIZE: " + size.width);
         origin.x = (size.width - textLayout.getAdvance()) / 2;
+
         origin.y = (size.height - textLayout.getDescent() + textLayout.getAscent()) / 2;
         return origin;
     }
@@ -198,6 +205,13 @@ public class SelectionSample extends JPanel {
                 graphics2D.draw(carets[1]);
             }
         }
+
+        if (highlight) {
+            Color selectionColor = new Color(0x640000FF, true);
+            Shape selection  = textLayout.getLogicalHighlightShape(posistionChar, posistionChar + 1);
+            g.setColor(selectionColor);
+            ((Graphics2D) g).fill(selection);
+        }
     }
 
     /**
@@ -229,19 +243,19 @@ public class SelectionSample extends JPanel {
             float clickX = (float) (e.getX() - origin.getX());
             float clickY = (float) (e.getY() - origin.getY());
             // Get the character position of the mouse location.
-            System.out.println("X: " + clickX + ", Y: " + clickY);
+            // System.out.println("X: " + clickX + ", Y: " + clickY);
 
             TextHitInfo position = textLayout.hitTestChar(clickX, clickY);
-            System.out.println("Pos: " + position);
-
-
-            int newActiveEnd = position.getInsertionIndex();
-            // If newActiveEnd is different from activeEnd, update activeEnd
-            // and repaint the Panel so the new selection will be displayed.
-            if (activeEnd != newActiveEnd) {
-                activeEnd = newActiveEnd;
-                frame.repaint();
-            }
+            posistionChar = position.getCharIndex();
+            highlight = true;
+            frame.repaint();
+//            int newActiveEnd = position.getInsertionIndex();
+//            // If newActiveEnd is different from activeEnd, update activeEnd
+//            // and repaint the Panel so the new selection will be displayed.
+//            if (activeEnd != newActiveEnd) {
+//                activeEnd = newActiveEnd;
+//                frame.repaint();
+//            }
         }
     }
 
